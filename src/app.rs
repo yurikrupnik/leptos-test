@@ -1,13 +1,11 @@
-use leptos::*;
-use leptos::ev::{MouseEvent, Event};
+use leptos::ev::{Event, MouseEvent};
 use leptos::leptos_dom::logging::{console_error, console_log};
+use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-// use super::routes::About;
+use crate::components::Button;
+use crate::components::Navbar;
 use crate::routes::About;
-use crate::components::{Button};
-use crate::components::{Navbar};
-// use crate::routes::home::*;
 #[component]
 pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
@@ -18,7 +16,7 @@ pub fn App() -> impl IntoView {
         // id=leptos means cargo-leptos will hot-reload this stylesheet\
         <Stylesheet id="leptos" href="/pkg/tailwind.css"/>
         <Stylesheet id="leptos" href="/pkg/leptos_start.css"/>
-        // <Script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></Script>
+        <Script src="https://unpkg.com/htmx.org@1.9.6"></Script>
         // sets the document title
         <Title text="Welcome to Leptos"/>
 
@@ -73,7 +71,7 @@ fn HomePage() -> impl IntoView {
         <p>{name}</p>
         <Button handler=handler_boxed title="Og".to_string()/>
         <button on:click=on_click>"Click Me: " {count}</button>
-        <button hx-post="/clicked" hx-swap="outerHTML">
+        <button class="btn py-1" hx-post="/clicked" hx-swap="outerHTML">
             Click Me
         </button>
     }

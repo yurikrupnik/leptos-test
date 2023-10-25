@@ -10,6 +10,6 @@ pub fn Button(
     #[prop(into)] handler: Box<dyn Fn() + 'static>,
 ) -> impl IntoView {
     view! {
-        <button on:click={move |_|handler()}>{title}</button>
+        <button on:click=move |_|handler()>{title}</button>
     }
 }
