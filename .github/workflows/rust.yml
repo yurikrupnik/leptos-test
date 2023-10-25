@@ -16,7 +16,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - run: rustup target add wasm32-unknown-unknown
+    - uses: Swatinem/rust-cache@v2
+      with:
+        cache-all-crates: true
+    - run: cargo install cargo-leptos
     - name: Build
-      run: cargo build --verbose
+      run: cargo leptos build --release
     - name: Run tests
-      run: cargo test --verbose
+      run: cargo leptos test
