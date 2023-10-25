@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 // use serde::de::value::StrDeserializer;
 // use sqlx::{PgPool, query_as, FromRow};
 

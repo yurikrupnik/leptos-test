@@ -24,21 +24,26 @@ pub async fn get_about() -> Result<String, ServerFnError> {
 //     }
 // }
 
-
 async fn fetch_todos() -> Vec<Todo> {
     println!("fetching data");
-    get(
-        "http://localhost:8080/api/todo"
-    ).await.unwrap().json::<Vec<Todo>>().await.expect("Failed fetching todos")
+    get("http://localhost:8080/api/todo")
+        .await
+        .unwrap()
+        .json::<Vec<Todo>>()
+        .await
+        .expect("Failed fetching todos")
 }
 
 #[component]
 pub fn About() -> impl IntoView {
     let (count, set_count) = create_signal(4);
     let (data, setData) = create_signal::<Vec<Todo>>(vec![]);
-    let _ = create_resource(|| (), move |_| async move {
-        setData(fetch_todos().await);
-    });
+    let _ = create_resource(
+        || (),
+        move |_| async move {
+            setData(fetch_todos().await);
+        },
+    );
     // let is_loading = once.loading();
     view! {
         <div class="text-blue-300">

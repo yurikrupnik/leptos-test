@@ -1,11 +1,11 @@
+use crate::components::Button;
+use crate::components::Navbar;
+use crate::routes::About;
 use leptos::ev::{Event, MouseEvent};
 use leptos::leptos_dom::logging::{console_error, console_log};
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-use crate::components::Button;
-use crate::components::Navbar;
-use crate::routes::About;
 #[component]
 pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.

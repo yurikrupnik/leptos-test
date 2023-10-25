@@ -5,7 +5,9 @@ use components::Navbar;
 
 async fn clicked() -> impl Responder {
     let html = ssr::render_to_string(Navbar).to_string();
-    HttpResponse::Ok().content_type("text/html; charset=utf-8").body(html)
+    HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8")
+        .body(html)
 }
 mod store;
 // use store::Store;
@@ -13,8 +15,8 @@ mod store;
 #[cfg(feature = "ssr")]
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    use actix_files::Files;
     use actix_cors::Cors;
+    use actix_files::Files;
     use actix_web::*;
     use leptos::*;
     use leptos_actix::{generate_route_list, LeptosRoutes};
