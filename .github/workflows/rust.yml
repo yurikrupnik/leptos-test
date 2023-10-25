@@ -16,6 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - run: cargo install cargo-leptos
     - name: Build
       run: cargo leptos build --release
     - name: Run tests
