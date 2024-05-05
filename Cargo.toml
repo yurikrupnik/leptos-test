@@ -23,7 +23,7 @@ leptos_router = { version = "0.5", features = ["nightly"] }
 wasm-bindgen = "=0.2.87"
 serde = { version = "1.0.190", features = ["derive"] }
 sqlx = { version = "0.7.2", optional = true, default-features = false, features = ["postgres", "runtime-tokio-rustls", "macros"] }
-reqwest = {version = "0.11.22", features = ["json"]}
+reqwest = {version = "0.12.0", features = ["json"]}
 #log = { version = "0.4.20" }
 #env_logger = { version = "0.10.0"}
 
