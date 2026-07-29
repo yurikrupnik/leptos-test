@@ -15,7 +15,7 @@ actix-web = { version = "4", optional = true, features = ["macros"] }
 actix-cors = { version = "0.6.4", optional = true }
 console_error_panic_hook = "0.1"
 cfg-if = "1"
-http = { version = "0.2", optional = true }
+http = { version = "1.0", optional = true }
 leptos = { version = "0.5", features = ["nightly"] }
 leptos_meta = { version = "0.5", features = ["nightly"] }
 leptos_actix = { version = "0.5", optional = true }
